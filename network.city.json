@@ -1,0 +1,184 @@
+{
+    "type": "CityJSON",
+    "version": "1.1",
+    "extensions":
+    {
+        "UtilityNetwork":
+        {
+            "url": "http://idiap.ch/~gperonato/utilitynetwork.ext.min.json",
+            "version": "1.1"
+        }
+    },
+    "transform":
+    {
+        "scale":
+        [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "translate":
+        [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    "CityObjects":
+    {
+        "myNetwork":
+        {
+            "type": "+Network",
+            "attributes":
+            {
+                "class": "LowPressureNetwork",
+                "usage": "supply",
+                "function": "supply",
+                "transportedMedium":
+                {
+                    "type": "+LiquidMedium",
+                    "attributes":
+                    {
+                        "type": "supply",
+                        "isCorrosive": false
+                    }
+                }
+            }
+        },
+        "myNetworkGraph":
+        {
+            "type": "+NetworkGraph",
+            "attributes":
+            {
+                "nodeMember": "mynode1",
+                "component": "myPipe"
+            }
+        },
+        "myFeatureGraph":
+        {
+            "type": "+FeatureGraph",
+            "attributes":
+            {
+                "node":
+                [
+                    "mynode1",
+                    "mynode2"
+                ],
+                "interiorFeatureLink":
+                [
+                    "myLink"
+                ]
+            },
+            "children":
+            [
+                "myNode1",
+                "myNode2",
+                "myLink",
+                "myPipe"
+            ]
+        },
+        "myNode1":
+        {
+            "type": "+Node",
+            "attributes":
+            {
+                "NodeValue": "exterior"
+            },
+            "geometry":
+            [
+                {
+                    "type": "MultiPoint",
+                    "lod": "1",
+                    "boundaries":
+                    [
+                        0
+                    ]
+                }
+            ],
+            "parents":
+            [
+                "myFeatureGraph"
+            ]
+        },
+        "myNode2":
+        {
+            "type": "+Node",
+            "attributes":
+            {
+                "NodeValue": "exterior"
+            },
+            "geometry":
+            [
+                {
+                    "type": "MultiPoint",
+                    "lod": "1",
+                    "boundaries":
+                    [
+                        1
+                    ]
+                }
+            ],
+            "parents":
+            [
+                "myFeatureGraph"
+            ]
+        },
+        "myLink":
+        {
+            "type": "+InteriorFeatureLink",
+            "attributes":
+            {
+                "start": "myNode1",
+                "end": "myNode2"
+            },
+            "geometry":
+            [
+                {
+                    "type": "MultiLineString",
+                    "lod": "1",
+                    "boundaries":
+                    [
+                        [
+                            0,
+                            1
+                        ]
+                    ]
+                }
+            ],
+            "parents":
+            [
+                "myFeatureGraph"
+            ]
+        },
+        "myPipe":
+        {
+            "type": "+RoundPipe",
+            "topoGraph": "myFeatureGraph",
+            "attributes":
+            {
+                "interiorDiameter":
+                {
+                    "value": 10,
+                    "uom": "mm"
+                }
+            },
+            "parents":
+            [
+                "myFeatureGraph"
+            ]
+        }
+    },
+    "vertices":
+    [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            0,
+            0
+        ]
+    ]
+}
