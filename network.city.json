@@ -153,9 +153,9 @@
         "myPipe":
         {
             "type": "+RoundPipe",
-            "topoGraph": "myFeatureGraph",
             "attributes":
             {
+                "topoGraph": "myFeatureGraph",
                 "interiorDiameter":
                 {
                     "value": 10,
