@@ -5,8 +5,8 @@
     {
         "UtilityNetwork":
         {
-            "url": "http://idiap.ch/~gperonato/utilitynetwork.ext.min.json",
-            "version": "1.1"
+            "url": "https://raw.githubusercontent.com/idiap/cjutilitynetwork/main/utilitynetwork.ext.min.json",
+            "version": "0.0.1"
         }
     },
     "transform":
