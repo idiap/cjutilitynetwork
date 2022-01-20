@@ -1,6 +1,7 @@
 {
     "type": "CityJSONExtension",
     "name": "UtilityNetwork",
+    "uri": "https://github.com/idiap/cjutilitynetwork/blob/main/utilitynetwork.ext.json",
     "version": "0.0.1",
     "versionCityJSON": "1.1",
     "description": "Extension for Utility Networks",
